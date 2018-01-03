@@ -1,27 +1,28 @@
-var webpack = require('webpack');
-var path = require('path');
+const path = require('path');
 
-var parentDir = path.join(__dirname, '../');
+const parentDir = path.join(__dirname, '../');
 
 module.exports = {
   entry: [
-    path.join(parentDir, 'src', 'index.js')
+    path.join(parentDir, 'src', 'index.jsx'),
   ],
   module: {
     loaders: [{
       test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      }
-    ]
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+    }],
   },
   output: {
-    path: parentDir + '/dist',
-    filename: 'bundle.js'
+    path: `${parentDir}/dist`,
+    filename: 'bundle.js',
   },
   devServer: {
     contentBase: parentDir,
     historyApiFallback: true,
-    port: 8080
-  }
-}
+    port: 8080,
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+};
