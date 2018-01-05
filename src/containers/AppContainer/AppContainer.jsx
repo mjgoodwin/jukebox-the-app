@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import InputPreview from 'components/InputPreview';
-import { setMessage } from 'actions/message';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import InputPreview from "components/InputPreview";
+import setMessage from "actions/message";
 
 class AppContainer extends Component {
   constructor() {
@@ -10,18 +10,12 @@ class AppContainer extends Component {
   }
 
   onChange(value) {
-    console.log(setMessage);
     this.props.dispatch(setMessage(value));
   }
 
   render() {
     const { message } = this.props.messageReducer;
-    return (
-      <InputPreview
-        value={message}
-        onChange={this.onChange}
-      />
-    );
+    return <InputPreview value={message} onChange={this.onChange} />;
   }
 }
 

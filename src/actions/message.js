@@ -1,4 +1,4 @@
-import ActionTypes from 'constants/ActionTypes';
+import ActionTypes from "constants/ActionTypes";
 
 // const setMessage = payload => ({
 //   type: ActionTypes.SET_MESSAGE,
@@ -7,7 +7,6 @@ import ActionTypes from 'constants/ActionTypes';
 
 // const setMessage = contestID => (dispatch, getState) => {
 //   dispatch(fetchLineupFormatForContestRequest());
-
 
 // const checkPublishedContentCards = (resource_uris, after) => {
 //   return (dispatch) => {
@@ -20,23 +19,20 @@ import ActionTypes from 'constants/ActionTypes';
 // };
 //
 // return dispatch => {
-    // dispatch({
-    //    type: SET_MESSAGE,
-    //    payload: {
-    //     message
-    //    }
-    // })
+// dispatch({
+//    type: SET_MESSAGE,
+//    payload: {
+//     message
+//    }
+// })
 
-
-const setMessage = (message) => {
-  return (dispatch) => {
-    dispatch({
-      type: ActionTypes.SET_MESSAGE,
-      payload: {
-        message,
-      },
-    });
-  };
+const setMessage = message => dispatch => {
+  dispatch({
+    type: ActionTypes.SET_MESSAGE,
+    payload: {
+      message
+    }
+  });
 };
 
 export default setMessage;

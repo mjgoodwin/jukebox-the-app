@@ -1,7 +1,7 @@
-import ActionTypes from 'constants/ActionTypes';
+import ActionTypes from "constants/ActionTypes";
 
 const initState = {
-  message: '',
+  message: ""
 };
 
 export default (state = initState, action) => {
@@ -9,7 +9,7 @@ export default (state = initState, action) => {
     case ActionTypes.SET_MESSAGE:
       return {
         ...state,
-        message: action.payload.message,
+        message: action.payload.message
       };
     default:
       return state;
