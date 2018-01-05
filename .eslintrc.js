@@ -6,4 +6,11 @@ module.exports = {
   "globals": {
     "document": false
   },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack/webpack.dev.config.js"
+      }
+    },
+  },
 };

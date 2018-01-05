@@ -1,7 +1,28 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import InputPreview from 'components/InputPreview';
+import { setMessage } from 'actions/message';
 
-export default class AppContainer extends Component {
+class AppContainer extends Component {
+  constructor() {
+    super();
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(value) {
+    console.log(setMessage);
+    this.props.dispatch(setMessage(value));
+  }
+
   render() {
-    return <p>This is my new react app</p>;
+    const { message } = this.props.messageReducer;
+    return (
+      <InputPreview
+        value={message}
+        onChange={this.onChange}
+      />
+    );
   }
 }
+
+export default connect(state => state)(AppContainer);

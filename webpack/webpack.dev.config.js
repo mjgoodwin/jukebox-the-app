@@ -24,5 +24,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    modules: [
+      path.resolve(parentDir, 'src'),
+      path.resolve(parentDir, 'node_modules'),
+    ],
   },
 };
