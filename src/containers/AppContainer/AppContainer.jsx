@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import InputPreview from "components/InputPreview";
 import setMessage from "actions/message";
 
@@ -15,7 +16,14 @@ class AppContainer extends Component {
 
   render() {
     const { message } = this.props.messageReducer;
-    return <InputPreview value={message} onChange={this.onChange} />;
+    return (
+      <div>
+        <Link to="/about">
+          <button>About</button>
+        </Link>
+        <InputPreview value={message} onChange={this.onChange} />
+      </div>
+    );
   }
 }
 
